@@ -1,0 +1,6 @@
+
+git init .config
+git clone https://gitlab.cci.drexel.edu/cid/2425/fw1023/60-06/ci102_cyberdrones.git
+Then make sure cloned code matches repository, then SOURCE CONTROL on the left of VS code allows pushing and pulling
+
+Contact teammates before pushing and pulling and working on code.
