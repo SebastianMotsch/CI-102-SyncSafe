@@ -2,3 +2,9 @@ body {
 	text-align: center;
 	background-color: #7f7f7f;
 }
+
+button {
+	margin: 0;
+	background-color: black;
+	color: white;
+}
