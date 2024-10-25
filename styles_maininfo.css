@@ -1,0 +1,19 @@
+:root{
+    --bdercolor: #0F0FFF;
+}
+
+body{
+    background-color: #9FCF9F;
+}
+
+.header {
+    background-color: #9FF3F2;
+    padding-left: 5%;
+}
+
+.section {
+    margin: 4%;
+    border: 1px solid var(--bdercolor);
+    padding: 1%;
+    background-color: #AFFAAF;
+}
