@@ -1,40 +1,39 @@
 const devices = [
-  {
-      name: 'UAV Drone 1',
-      ip: '192.168.1.2',
-      vulnerabilities: [
-          { description: 'Open port 8080', severity: 5 },
-          { description: 'Weak password encryption', severity: 8 }
-      ]
-  },
-  {
-      name: 'UAV Drone 2',
-      ip: '192.168.1.3',
-      vulnerabilities: [
-          { description: 'Outdated firmware', severity: 6 },
-          { description: 'Default credentials still active', severity: 9 }
-      ]
-  },
-  {
-    name: 'UAV Drone 3',
-    ip: '192.168.1.4',
-    vulnerabilities: [
-        { description: 'Weak Software', severity: 3 },
-        { description: 'Weak port security', severity: 9 }
-    ]
-}
+    { name: "Drone A", ip: "192.168.1.10", vulnerabilities: [{ severity: 3 }, { severity: 2 }] },
+    { name: "Drone B", ip: "192.168.1.11", vulnerabilities: [{ severity: 1 }] },
+    { name: "Drone C", ip: "192.168.1.12", vulnerabilities: [{ severity: 4 }, { severity: 1 }, { severity: 2 }] }
 ];
 
+
 function displayDevices() {
-  const deviceList = document.getElementById('device-list');
-  deviceList.innerHTML = '';
-  devices.forEach(device => {
-      const li = document.createElement('li');
-      li.textContent = `${device.name} (IP: ${device.ip})`;
-      deviceList.appendChild(li);
-  });
+    const deviceListDiv = document.getElementById("device-list");
+    devices.forEach(device => {
+        const deviceDiv = document.createElement("div");
+        deviceDiv.className = "device";
+        deviceDiv.innerHTML = `<strong>Name:</strong> ${device.name} <br> <strong>IP Address:</strong> ${device.ip}`;
+        deviceListDiv.appendChild(deviceDiv);
+    });
 }
 
-document.getElementById('scan-button').addEventListener('click', scanDevices);
+function scanVulnerabilities() {
+    const scanResultsDiv = document.getElementById("scan-results");
+    scanResultsDiv.innerHTML = ""; //
 
-window.onload = displayDevices;
+    devices.forEach(device => {
+        let totalSeverity = 0;
+        let numberOfVulnerabilities = device.vulnerabilities.length;
+
+        device.vulnerabilities.forEach(vulnerability => {
+            totalSeverity += vulnerability.severity;
+        });
+
+        const riskScore = (totalSeverity / numberOfVulnerabilities).toFixed(2);
+        const resultDiv = document.createElement("div");
+        resultDiv.innerHTML = `<strong>${device.name}</strong>: Risk Score - ${riskScore} <br>`;
+        scanResultsDiv.appendChild(resultDiv);
+    });
+}
+
+document.getElementById("scan-button").addEventListener("click", scanVulnerabilities);
+
+displayDevices();
