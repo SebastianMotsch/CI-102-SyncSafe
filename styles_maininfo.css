@@ -7,11 +7,16 @@
     --dodgerblue: #3590F3;
 }
 
+html {
+    font-family: verdana;
+}
+
 body{
     background-color: #9FCF9F;
 }
 
 header {
+    
     background-color: #9FF3F2;
     padding-left: 5%;
 }
@@ -21,10 +26,6 @@ header {
     border: 1px solid var(--bdercolor);
     padding: 2.5%;
     background-color: #AFFAAF;
-}
-
-.section p {
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .section h2 {
