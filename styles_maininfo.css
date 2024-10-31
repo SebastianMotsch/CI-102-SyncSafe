@@ -1,5 +1,4 @@
 :root{
-    --bdercolor: #0F0FFF;
     --palepurple: #F1E3F3;
     --periwinkle: #C2BBF0;
     --jordyblue: #8FB8ED;
@@ -12,20 +11,19 @@ html {
 }
 
 body{
-    background-color: #9FCF9F;
+    background-color: var(--jordyblue);
 }
 
 header {
-    
-    background-color: #9FF3F2;
+    background-color: var(--periwinkle);
     padding-left: 5%;
 }
 
 .section {
     margin: 2.5%;
-    border: 1px solid var(--bdercolor);
+    border: 2px solid var(--dodgerblue);
     padding: 2.5%;
-    background-color: #AFFAAF;
+    background-color: var(--palepurple);
 }
 
 .section h2 {
@@ -36,17 +34,17 @@ header {
 
 .section li {
     font-weight: bold;
-    color: blueviolet;
+    color: var(--deekskyblue);
     margin: 2.5%;
 }
 
 .section:hover{
-    border-color: yellow;
+    border: 2px solid yellow;
 }
 
 footer {
-	background-color: #333;
-	color: white;
+	background-color: var(--periwinkle);
+	color: var(--dodgerblue);
 	margin-bottom: auto;
 	text-align: center;
     padding: 10px;
