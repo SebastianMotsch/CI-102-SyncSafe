@@ -15,8 +15,22 @@ body{
 }
 
 header {
-    background-color: var(--dodgerblue);
-    
+    border: none;
+}
+
+nav{
+    background-color: var(--periwinkle);
+    width: 100%;
+}
+
+nav ul{
+    margin: 2.5%;
+    padding: 0;
+}
+
+nav img {
+    width: 150px;
+    height: 50px;
 }
 
 .section {
@@ -24,6 +38,12 @@ header {
     border: 2px solid var(--dodgerblue);
     padding: 2.5%;
     background-color: var(--palepurple);
+}
+
+.section img {
+    padding: 2.5%;
+    width: 25%;
+    height: 20%;
 }
 
 .section h2 {
