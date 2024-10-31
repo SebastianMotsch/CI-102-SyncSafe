@@ -6,16 +6,36 @@ body{
     background-color: #9FCF9F;
 }
 
-.header {
+header {
     background-color: #9FF3F2;
     padding-left: 5%;
 }
 
 .section {
-    margin: 4%;
+    margin: 2.5%;
     border: 1px solid var(--bdercolor);
-    padding: 1%;
+    padding: 2.5%;
     background-color: #AFFAAF;
+}
+
+.section p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.section h2 {
+    text-align: left;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.section li {
+    font-weight: bold;
+    color: blueviolet;
+    margin: 2.5%;
+}
+
+.section:hover{
+    border-color: yellow;
 }
 
 footer {
