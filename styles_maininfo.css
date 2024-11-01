@@ -25,12 +25,16 @@ nav{
 
 nav ul{
     margin: 2.5%;
-    padding: 0;
+    background-color: var(--deekskyblue);
+    padding: 1%;
+    text-align: center;
+    width: 20%;
 }
 
 nav img {
-    width: 150px;
-    height: 50px;
+    padding-top: 10px;
+    padding-inline: 40%;
+    width: 30%;
 }
 
 .section {
@@ -38,22 +42,28 @@ nav img {
     border: 2px solid var(--dodgerblue);
     padding: 2.5%;
     background-color: var(--palepurple);
+    text-align: left;
 }
 
 .section img {
-    padding: 2.5%;
-    width: 25%;
-    height: 20%;
+    background-color: var(--periwinkle);
+    padding: 1.5%;
+    width: 45%;
 }
 
-.section h2 {
-    text-align: left;
-    font-size: 25px;
-    font-style: italic;
+.section h1 {
+    font-size: 20px;
+    font-weight: normal;
+    color: var(--deekskyblue);
+}
+
+.section p {
+    text-indent: 5%;
+    font-size: 15px;
+    color: var(--deekskyblue);
 }
 
 .section li {
-    font-weight: bold;
     color: var(--deekskyblue);
     margin: 2.5%;
 }
