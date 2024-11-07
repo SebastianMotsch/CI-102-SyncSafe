@@ -16,7 +16,6 @@ body {
 header {
 	background-color: var(--dodgerblue);
 	padding: 40px;
-	display: flex;
 	align-items: center;
 	justify-content: start;
 	width: 100%;
