@@ -107,7 +107,9 @@ nav ul li a:hover {
     border: 2px solid yellow;
 }
 
-.collapse {
+
+
+.question {
     margin-inline: 5%;
     width: 87.5%;
     font-size: 15px;
@@ -115,20 +117,20 @@ nav ul li a:hover {
     background-color: var(--jordyblue);
 }
 
-.active, .collapse:hover {
+.question:hover {
     background-color: var(--periwinkle);
 }
 
-.collapse:after{
+.question:after{
     content: "\002B";
     float: right;
 }
 
-.active:after {
-    content: "\2796";
+.open:after {
+    content: "\2212";
 }
 
-.hidden {
+.answer {
     overflow: hidden;
     max-height: 0;
     text-indent: 7.5%;
