@@ -81,12 +81,11 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-
 .section {
     margin: 2.5%;
-    border: 2px solid var(--dodgerblue);
+    border: 2px solid var(--periwinkle);
     padding: 2.5%;
-    background-color: var(--palepurple);
+    background-color: white;
     text-align: left;
 }
 
@@ -99,7 +98,13 @@ nav ul li a:hover {
 .section h1 {
     font-size: 20px;
     font-weight: normal;
-    color: var(--deekskyblue);
+    color: #0000FF;
+}
+
+.section h2 {
+    font-size: 17px;
+    font-weight: normal;
+    color: var(--dodgerblue);
 }
 
 .section p {
