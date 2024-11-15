@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <link rel="stylesheet" type="text/css" href="faq.css">
-</head>
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ</title>
+        <link rel="stylesheet" type="text/css" href="faq.css">
+    </head>
 
     <body>
         <header>
-            <img src="images/header-background.png" alt="Header Background" class="header-background">
             <div class="logo-container">
                 <img src="images/syncsafe_logo.png" alt="SyncSafe Logo" class="logo">
             </div>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="maininfo.html">INFO</a></li>
-                <li><a href="scanner.html">SCANNER</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="maininfo.html">INFO<div class="nav-icon"><img src="images/info_icon.png" alt="Info Icon"></div></a></li>
+                    <li><a href="scanner.html">SCANNER<div class="nav-icon"><img src="images/scanner_icon.png" alt="Scanner Icon"></div></a></li>
+                    <li><a href="faq.html">FAQs<div class="nav-icon"><img src="images/faq_icon.png" alt="FAQ Icon"></div></a></li>
+                    <li><a href="#">SERVICES<div class="nav-icon"><img src="images/services_icon.png" alt="Services Icon"></div></a></li>
+                    <li><a href="#">CONTACT<div class="nav-icon"><img src="images/contact_icon.png" alt="Contact Icon"></div></a></li>
+                </ul>
+            </nav>
 
+            <main>
+                <div class="section">
+                    <h1>FAQ #1</h1>
+                    <button class="question">Question #1</button>
+                    <div class="answer">
+                        <p>
+                            Please work ;-;
+                        </p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h1>FAQ #2</h1>
+                </div>
+            </main>
 
-        <div class="section">
-            <h1>FAQ #1</h1>
-            <button class="question">Question #1</button>
-            <div class="answer">
-                <p>
-                    Please work ;-;
-                </p>
-            </div>
         </div>
-        <div class="section">
-            <h1>FAQ #2</h1>
-            
-        </div>
-        <script src="../faq.js"></script>
+
         <footer>
             <p>&copy; CI 102 - Team 6 - IoT Device Vulnerability Scanner. All rights
                 reserved.</p>
         </footer>
+
+        <script src="../faq.js"></script>
+
     </body>
 </html>
