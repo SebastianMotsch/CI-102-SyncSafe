@@ -1,51 +1,49 @@
-const express = require('express');
-const http = require('http');
-const WebSocket = require('ws');
-
+const express = require("express");
+const path = require("path");
+const fs = require("fs");
+const QRCode = require("qrcode");
 const app = express();
-const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
-
-let onlineUsers = [];
-
-app.use(express.json());
-app.use(express.static('public'));
-
-app.post('/addUser', (req, res) => {
-    const { username } = req.body;
-    const vulnerabilityScore = Math.floor(Math.random() * 100) + 1;
-    const user = { username, score: vulnerabilityScore };
-
-    onlineUsers.push(user);
-    broadcast({ type: 'newUser', user });
-    res.status(200).send('User added successfully');
-});
-
-app.post('/disconnectUser', (req, res) => {
-    const { username } = req.body;
-    onlineUsers = onlineUsers.filter(user => user.username !== username);
-    broadcast({ type: 'userDisconnected', username });
-    res.status(200).send('User disconnected');
-});
-
-function broadcast(data) {
-    wss.clients.forEach(client => {
-        if (client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify(data));
-        }
-    });
-}
-
-wss.on('connection', (ws) => {
-    console.log('Client connected');
-    ws.send(JSON.stringify({ type: 'init', users: onlineUsers }));
-
-    ws.on('close', () => {
-        console.log('Client disconnected');
-    });
-});
-
 const PORT = 3000;
-server.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
+
+app.get("/data.json", (req, res) => {
+  res.sendFile(path.join(__dirname, "data.json"));
+});
+
+app.get("/status", (req, res) => {
+  res.sendStatus(200);
+});
+
+app.post("/submit", (req, res) => {
+  const { username } = req.body;
+  const timestamp = new Date().toISOString();
+  const vulnerability = Math.floor(Math.random() * 100) + 1;
+  const data = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+
+  if (data.some((user) => user.username === username)) {
+    res.json({ message: "Username already exists. Please choose a different name." });
+    return;
+  }
+
+  const newUser = { username, timestamp, vulnerability, online: true };
+  data.push(newUser);
+  fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
+  res.json({ message: "User connected successfully!" });
+});
+
+app.get("/generate-qr", (req, res) => {
+  const inputUrl = `${req.protocol}://${req.get("host")}/input.html`;
+  QRCode.toDataURL(inputUrl, (err, qrCodeUrl) => {
+    if (err) {
+      res.status(500).send("Error generating QR code.");
+      return;
+    }
+    res.json({ qrCodeUrl });
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });

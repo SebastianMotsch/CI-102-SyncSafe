@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Input</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect to Server</title>
+    <link rel="stylesheet" href="scanner.css">
+  </head>
 
-<body>
-  <h1>Join the IoT Scanner</h1>
-  <form id="user-form">
-      <input type="text" id="username" placeholder="Enter your name" required>
-      <button type="submit">Join</button>
-  </form>
-  <button id="disconnect-button" style="display: none;">Disconnect</button>
-  <script src="script.js"></script>
-</body>
-
+  <body>
+    <h1>Enter Your Username</h1>
+    <form id="userForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <button type="submit">Connect</button>
+    </form>
+    <script src="input.js"></script>
+  </body>
 </html>

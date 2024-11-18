@@ -23,37 +23,67 @@
               <li><a href="scanner.html">SCANNER<div class="nav-icon"><img src="images/scanner_icon.png" alt="Scanner Icon"></div></a></li>
               <li><a href="faq.html">FAQs<div class="nav-icon"><img src="images/faq_icon.png" alt="FAQ Icon"></div></a></li>
               <li><a href="#">SERVICES<div class="nav-icon"><img src="images/services_icon.png" alt="Services Icon"></div></a></li>
-              <li><a href="#">CONTACT<div class="nav-icon"><img src="images/contact_icon.png" alt="Contact Icon"></div></a></li>
+              <li><a href="input.html">CONTACT<div class="nav-icon"><img src="images/contact_icon.png" alt="Contact Icon"></div></a></li>
           </ul>
       </nav>
 
       <main>
         <div class="dashboard">
-          <div id="network-status" class="box">
+          <!-- Top Row -->
+          <div id="network-status" class="box small-box">
             <h2>Network Status</h2>
             <p id="status-text">Offline</p>
           </div>
-          <div id="clients" class="box">
-            <h2>Clients</h2>
+          <div id="overall-health" class="box small-box">
+            <h2>Overall Health</h2>
+            <p>Good</p>
+          </div>
+          
+          <div id="qr-code" class="box small-box">
+            <div id="qr-code-display"></div>
+          </div>
+
+          <!-- Middle Row -->
+          <div id="detections" class="box large-box">
+            <table id="detection-table">
+              <thead>
+                <tr>
+                  <th>Date & Time</th>
+                  <th>Category</th>
+                  <th>Conclusion</th>
+                </tr>
+              </thead>
+              <tbody id="detection-body"></tbody>
+            </table>
+          </div>
+          <div id="clients" class="box medium-box">
             <ul id="user-list"></ul>
           </div>
-          <div id="report" class="box">
+
+          <!-- Bottom Row -->
+          <div id="bottom-left">
+            <div id="bottom-left-top" class="box small-box">
+                <h2>Alerts</h2>
+                <p>No alerts.</p>
+            </div>
+            <div id="bottom-left-bottom" class="box small-box">
+                <h2>Logs</h2>
+                <p>Log details here.</p>
+            </div>
+        </div>
+        <div id="bottom-right" class="box large-box">
             <h2>Report</h2>
-            <p>Coming Soon</p>
-          </div>
-          <div id="placeholder" class="box">
-            <h2>Placeholder</h2>
-            <p>Content Here</p>
-          </div>
+            <div id="report-content">Report content here.</div>
         </div>
       </main>
     </div>
 
+    <script src="/qrcode/qrcode.min.js"></script>
+    <script src="scanner.js"></script>
+
     <footer>
       <p>&copy; CI 102 - Team 6 - IoT Device Vulnerability Scanner. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 
   </body>
 </html>
